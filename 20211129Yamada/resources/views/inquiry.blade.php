@@ -22,8 +22,14 @@
                     <h2 class="item-title">お名前<span>※</span></h2>
                 </div>
                 <div class="right">
-                    <input class="textbox-name" type="text" name="name_family" action="/confirmation" method="POST">
-                    <input class="textbox-name" type="text" name="name_given" action="/confirmation" method="POST">
+                    <div class="family with_example">
+                        <input class="textbox-name" type="text" name="name_family" action="/confirmation" method="POST">
+                        <p class="example">例）山田</p>
+                    </div>
+                    <div class="given with_example">
+                        <input class="textbox-name" type="text" name="name_given" action="/confirmation" method="POST">
+                        <p class="example">例）太郎</p>
+                    </div>
                 </div>
             </div>
             <div class="item">
@@ -39,24 +45,39 @@
                 <div class="left">
                     <h2 class="item-title">メールアドレス<span>※</span></h2>
                 </div>
-                <div class="right">
+                <div class="right with_example">
                     <input type="text" name="mail">
+                    <p class="example">例）test@example.com</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <h2 class="item-title">郵便番号<span>※</span></h2>
+                </div>
+                <div class="right">
+                    &#12306;
+                    <div class="with_example">
+                        <input type="text" name="zip_code">
+                        <p class="example">例）123-4567</p>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="left">
                     <h2 class="item-title">住所<span>※</span></h2>
                 </div>
-                <div class="right">
+                <div class="right with_example">
                     <input type="text" name="address">
+                    <p class="example">例）東京都渋谷区千駄ヶ谷1-2-3</p>
                 </div>
             </div>
             <div class="item">
                 <div class="left">
                     <h2 class="item-title">建物名</h2>
                 </div>
-                <div class="right">
+                <div class="right with_example">
                     <input type="text" name="building">
+                    <p class="example">例）千駄ヶ谷マンション101</p>
                 </div>
             </div>
             <div class="item">

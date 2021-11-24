@@ -14,7 +14,7 @@ span {
 }
 .item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     padding-bottom: 10px;
 }
 .item-title {
@@ -27,6 +27,9 @@ span {
     width: 80%;
     display: flex;
     justify-content: space-between;
+}
+.with_example {
+    flex-direction: column;
 }
 input {
     width: 100%;
@@ -45,12 +48,23 @@ textarea {
     width: 48%;
 
 }
+.family, .given {
+    width: 100%;
+}
+/* .gender-item {
+    justify-content: space-between;
+} */
 .radio {
     transform: scale(2.0);
 }
+.example {
+    color: gray;
+}
 button {
+    display: block;
     background-color: black;
     color: white;
     padding: 5px 50px;
-    margin: 0 auto;
+    margin: 10px auto;
 }
+

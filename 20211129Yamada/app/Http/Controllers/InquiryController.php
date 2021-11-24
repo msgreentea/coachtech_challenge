@@ -10,4 +10,9 @@ class InquiryController extends Controller
     {
         return view('inquiry');
     }
+    public function confirm()
+    {
+        $items = item::all();
+        return view('confirmation', ['items' => $items]);
+    }
 }
