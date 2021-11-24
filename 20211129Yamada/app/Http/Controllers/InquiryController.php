@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class InquiryController extends Controller
 {
-    public function inqury()
+    public function inquiry()
     {
-        return view('/');
+        return view('inquiry');
     }
 }
