@@ -12,7 +12,8 @@ class InquiryController extends Controller
     }
     public function confirm()
     {
-        $items = item::all();
-        return view('confirmation', ['items' => $items]);
+        // $items = item::all();
+        // return view('confirmation', ['items' => $items]);
+        return view('confirmation');
     }
 }

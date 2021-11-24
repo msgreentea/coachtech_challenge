@@ -1,32 +1,6 @@
-h1 {
-    text-align: center;
-}
-.container {
-    padding: 0 20%;
-    /* margin: 0 auto; */
-}
-.frame {
-    margin: 0 auto;
-}
 span {
     color: red;
     padding-left: 5px;
-}
-.item {
-    display: flex;
-    align-items: flex-start;
-    padding-bottom: 10px;
-}
-.item-title {
-    font-size: 18px;
-}
-.left {
-    width: 20%;
-}
-.right {
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
 }
 .with_example {
     flex-direction: column;
@@ -37,7 +11,8 @@ input {
     border-radius: 5px;
     border: 1px solid #ccc;
 }
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline: none;
 }
 textarea {
@@ -46,25 +21,29 @@ textarea {
 }
 .textbox-name {
     width: 48%;
-
 }
-.family, .given {
+.family,
+.given {
     width: 100%;
 }
 /* .gender-item {
     justify-content: space-between;
 } */
+/* .left {
+    width: 20%;
+}
+.right {
+    width: 80%;
+} */
+th {
+    width: 20%;
+}
+td {
+    width: 80%;
+}
 .radio {
-    transform: scale(2.0);
+    transform: scale(2);
 }
 .example {
     color: gray;
 }
-button {
-    display: block;
-    background-color: black;
-    color: white;
-    padding: 5px 50px;
-    margin: 10px auto;
-}
-
