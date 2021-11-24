@@ -21,11 +21,11 @@
     </tr>
     <tr>
         <th><h2 class="item-title">メールアドレス</h2></th>
-        <td>{{ $items->address }}</td>
+        <td>{{ $items->mail }}</td>
     </tr>
     <tr>
         <th><h2 class="item-title">郵便番号</h2></th>
-        <td>{{ $items->address }}</td>
+        <td>{{ $items->zip_code }}</td>
     </tr>
     <tr>
         <th><h2 class="item-title">住所</h2></th>
