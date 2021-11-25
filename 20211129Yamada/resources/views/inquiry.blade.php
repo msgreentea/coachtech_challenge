@@ -22,12 +22,12 @@
                 <tr class="item">
                     <th><h2 class="item-title">お名前<span>※</span></h2></th>
                     <td>
-                        <div class="family with_example">
-                            <input class="textbox-name" type="text" name="name_family" action="/confirmation" method="POST">
+                        <div class="lastname with_example">
+                            <input class="textbox-name" type="text" name="lastname" action="/confirmation" method="POST">
                             <p class="example">例）山田</p>
                         </div>
-                        <div class="given with_example">
-                            <input class="textbox-name" type="text" name="name_given" action="/confirmation" method="POST">
+                        <div class="firstname with_example">
+                            <input class="textbox-name" type="text" name="firstname" action="/confirmation" method="POST">
                             <p class="example">例）太郎</p>
                         </div>
                     </td>
@@ -53,7 +53,7 @@
                     <td>
                         &#12306;
                         <div class="with_example">
-                            <input type="text" name="zip_code">
+                            <input type="text" name="zipcode">
                             <p class="example">例）123-4567</p>
                         </div>
                     </td>
