@@ -9,18 +9,15 @@ class Customer extends Model
 {
     use HasFactory;
 
-    protected $guarded = [
-       'id'
-    ];
+    protected $guarded = ['id'];
 
-    public static function rules()
-    {
-        'firstname' => 'required',
-        'lastname' => 'required',
-        'sex' => 'required',
-        'mail' => 'required | email:rfc,dns',
-        'zipcode' => 'required | max:8',
+    public static $ValidationRules = array(
+        'fullname' => 'required',
+        // 'lastname' => 'required',
+        'gender' => 'required',
+        'email' => 'required | email:rfc,dns',
+        'postcode' => 'required | max:8',
         'address' => 'required',
-        'comment' => 'required | max:120'
-    }
+        'opinion' => 'required | max:120'
+    );
 }
