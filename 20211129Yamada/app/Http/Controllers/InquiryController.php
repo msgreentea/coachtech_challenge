@@ -17,15 +17,18 @@ class InquiryController extends Controller
     public function typeInfo(Request $request)
     {
         $this->Validation($request, Contact::$ValidationRules);
+
         $data = $request->all();
-        // $data = Customer::create([]);
+        // dd($data);
+        // $data = Customer::create(['data' => $request->data]);
         return view('confirmation', ['data' => $data]);
     }
 
     // inquiryで入力したデータを表示
-    public function confirm()
+    public function send(Request $request)
     {
-        $items = Contact::all();
+
+        // $data = Contact::all();
         // return view('confirmation', ['items' => $items]);
         // return view('confirmation');
     }

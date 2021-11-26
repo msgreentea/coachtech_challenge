@@ -14,10 +14,11 @@ class Contact extends Model
     public static $ValidationRules = array(
         'fullname' => 'required',
         // 'lastname' => 'required',
+
         'gender' => 'required',
         'email' => 'required | email:rfc,dns',
-        'postcode' => 'required | max:8',
-        'address' => 'required',
-        'opinion' => 'required | max:120'
+        // 'postcode' => 'required | max:8',
+        // 'address' => 'required',
+        // 'opinion' => 'required | max:120'
     );
 }
