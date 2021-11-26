@@ -15,16 +15,28 @@ class InquiryController extends Controller
         return view('inquiry');
     }
 
-    // inquiryで入力したデータを保存、confirmationで表示
-    public function confirm(Request $request)
+    // データ確認
+    public function TypeInfo(Request $request)
     {
         $this->Validate($request, Contact::$ValidationRules);
-        // $data = $request->all();
+
+        // バリデーションでひっかかったら再読み込み
+        $data = $request->input();
+        if (Contact::$ValidationRules->fails()) {
+            return redirect('/');
+        }
+        // DBに保存
+        Contact::create($data);
+    }
+
+    // inquiryで入力したデータをDBに保存、confirmationに表示
+    public function confirm(Request $request)
+    {
         $data = $request->input();
         return view('confirmation', ['data' => $data]);
     }
 
-    // inquiryで入力したデータを表示
+    // サンクスページ
     public function send(Request $request)
     {
 
