@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Customer;
+use App\Models\Contact;
 
 class InquiryController extends Controller
 {
@@ -16,7 +16,7 @@ class InquiryController extends Controller
     // inquiryで入力したデータを保存、confirmationで表示
     public function typeInfo(Request $request)
     {
-        $this->Validation($request, Customer::$ValidationRules);
+        $this->Validation($request, Contact::$ValidationRules);
         $data = $request->all();
         // $data = Customer::create([]);
         return view('confirmation', ['data' => $data]);
@@ -25,7 +25,7 @@ class InquiryController extends Controller
     // inquiryで入力したデータを表示
     public function confirm()
     {
-        $items = item::all();
+        $items = Contact::all();
         // return view('confirmation', ['items' => $items]);
         // return view('confirmation');
     }
