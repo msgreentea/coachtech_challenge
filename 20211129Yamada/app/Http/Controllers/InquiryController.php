@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Foundation\Http\FormRequest\ContactRequest;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 
@@ -10,17 +11,16 @@ class InquiryController extends Controller
     // /inquiryページを表示
     public function inquiry()
     {
+        // $fullname = $this->lastname . $this->firstname;
         return view('inquiry');
     }
 
     // inquiryで入力したデータを保存、confirmationで表示
-    public function typeInfo(Request $request)
+    public function confirm(Request $request)
     {
-        $this->Validation($request, Contact::$ValidationRules);
-
-        $data = $request->all();
-        // dd($data);
-        // $data = Customer::create(['data' => $request->data]);
+        $this->Validate($request, Contact::$ValidationRules);
+        // $data = $request->all();
+        $data = $request->input();
         return view('confirmation', ['data' => $data]);
     }
 
@@ -28,8 +28,8 @@ class InquiryController extends Controller
     public function send(Request $request)
     {
 
-        // $data = Contact::all();
-        // return view('confirmation', ['items' => $items]);
+        $data = Contact::all();
+        return view('confirmation', ['data' => $data]);
         // return view('confirmation');
     }
 }

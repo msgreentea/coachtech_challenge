@@ -12,13 +12,11 @@ class Contact extends Model
     protected $guarded = ['id'];
 
     public static $ValidationRules = array(
-        'fullname' => 'required',
-        // 'lastname' => 'required',
-
+        'lastname.firstname' => 'required',
         'gender' => 'required',
         'email' => 'required | email:rfc,dns',
-        // 'postcode' => 'required | max:8',
-        // 'address' => 'required',
-        // 'opinion' => 'required | max:120'
+        'postcode' => 'required | max:8',
+        'address' => 'required',
+        'opinion' => 'required | max:120'
     );
 }

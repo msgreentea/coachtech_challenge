@@ -23,6 +23,7 @@
                     <th><h2 class="item-title">お名前<span>※</span></h2></th>
                     <td>
                         <div class="firstname with_example">
+                            <p>{{ old('fullname') }}</p>
                             <input class="textbox-name" type="text" name="lastname" value="{{ old('lastname') }}" method="POST">
                             <p class="example">例）山田</p>
                         </div>
