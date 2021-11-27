@@ -35,12 +35,7 @@ textarea {
 .right {
     width: 80%;
 } */
-th {
-    width: 20%;
-}
-td {
-    width: 80%;
-}
+
 .radio {
     transform: scale(2);
 }
