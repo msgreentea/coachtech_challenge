@@ -18,8 +18,7 @@ class ContactRequest extends FormRequest
     }
 
 
-    // バリデーション前にデータを加工する。したい
-    // prepareForValidationメソッドでデータ加工する
+    // バリデーション前にデータを加工する
     protected function prepareForValidation()
     {
         $this->merge([
@@ -28,17 +27,16 @@ class ContactRequest extends FormRequest
 
         // 名前
         $data = $this->all();
-
-        $data['fullname'] = $this->input('lastname') . $this->input('firstname');
+        $data->fullname = $this->input('lastname') . '　' . $this->input('firstname');
 
         $this->getInputSource()->replace($data);
 
 
-        // 郵便番号
-        if ($this->has('slug')) {
-            // 全角英数を半角に
-            $this->merge(['slug' => mb_convert_kana($this->slug, 'as')]);
-        }
+        // // 郵便番号
+        // if ($this->has('slug')) {
+        //     // 全角英数を半角に
+        //     $this->merge(['slug' => mb_convert_kana($this->slug, 'as')]);
+        // }
     }
     /**
      * Get the validation rules that apply to the request.

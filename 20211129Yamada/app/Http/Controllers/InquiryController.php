@@ -22,7 +22,6 @@ class InquiryController extends Controller
 
         // バリデーションでひっかかったら再読み込み
         $data = $request->all();
-        $fullname = $request->lastname . $request->firstname;
 
         // if (Contact::$ValidationRules->fails()) {
         //     return redirect('/');
