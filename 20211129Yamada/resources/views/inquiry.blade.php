@@ -13,9 +13,13 @@
 <body>
     <div class="container">
     <h1>お問い合わせ</h1>
-    <!-- @if (count($errors)>0)
-        <ul></ul>
-        @endif -->
+    @if (count($errors)>0)
+        <ul>
+            @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+        @endif
         <form class="frame" action="/confirmation" method="POST">
             @csrf
             <table>
@@ -23,7 +27,7 @@
                     <th><h2 class="item-title">お名前<span>※</span></h2></th>
                     <td>
                         <div class="firstname with_example">
-                            <p>{{ old('fullname') }}</p>
+                            <p>{{ old('lastname') }}</p>
                             <input class="textbox-name" type="text" name="lastname" value="{{ old('lastname') }}" method="POST">
                             <p class="example">例）山田</p>
                         </div>

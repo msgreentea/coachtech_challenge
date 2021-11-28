@@ -23,20 +23,12 @@ class ContactRequest extends FormRequest
     {
         $this->merge([
             'postcode' => mb_convert_kana($this->postcode, 'as'),
-        ])
+            'fullname' => $this->input('lastname') . '　' . $this->input('firstname')
+        ]);
 
         // 名前
-        $data = $this->all();
-        $data->fullname = $this->input('lastname') . '　' . $this->input('firstname');
-
-        $this->getInputSource()->replace($data);
-
-
-        // // 郵便番号
-        // if ($this->has('slug')) {
-        //     // 全角英数を半角に
-        //     $this->merge(['slug' => mb_convert_kana($this->slug, 'as')]);
-        // }
+        // $data = $this->all();
+        // $data->fullname = $this->input('lastname') . '　' . $this->input('firstname');
     }
     /**
      * Get the validation rules that apply to the request.

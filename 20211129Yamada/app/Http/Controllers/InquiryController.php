@@ -20,11 +20,20 @@ class InquiryController extends Controller
     {
         $this->Validate($request, Contact::$ValidationRules);
 
-        // バリデーションでひっかかったら再読み込み
+        // バリデーション済データの取得
+        $validated = $request->validated();
+
+        // バリデーション済み入力データの一部を取得
+        $validated = $request->safe()->only(['fullname', 'postcode']);
+
         $data = $request->all();
 
         // if (Contact::$ValidationRules->fails()) {
         //     return redirect('/');
+        // }
+
+        // if ($validated->fails()) {
+        //     return redirect('/')->withErrors($validated)->withInput();
         // }
 
         return view('confirmation', ['data' => $data]);

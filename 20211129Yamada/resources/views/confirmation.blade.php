@@ -18,6 +18,7 @@
                     {{-- <td>名字</td> --}}
                     {{-- <td>名前</td> --}}
                     <td>{{ $data->fullname }}</td>
+                {{-- <p>{{ $data->lastname }}{{ $data->firstname }}</p> --}}
                     {{-- <td>{{ $data->firstname }}</td> --}}
                     {{-- <input type="hidden" name="lastname" value="{{ $data->lastname }}"> --}}
                     {{-- <input type="hidden" name="firstname" value="{{ $data->firstname }}"> --}}
