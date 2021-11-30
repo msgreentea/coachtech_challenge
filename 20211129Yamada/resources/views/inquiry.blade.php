@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -13,67 +14,74 @@
 <body>
     <div class="container">
     <h1>お問い合わせ</h1>
-    @if (count($errors)>0)
-        <ul>
-            @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-        @endif
         <form class="frame" action="/confirmation" method="POST">
             @csrf
             <table>
-                <tr class="item">
-                    <th><h2 class="item-title">お名前<span>※</span></h2></th>
-                    <td>
-                        <div class="firstname with_example">
-                            <p>{{ old('lastname') }}</p>
-                            <input class="textbox-name" type="text" name="lastname" value="{{ old('lastname') }}" method="POST">
+                <tr>
+                    <th><label for=""><h2>お名前<span>※</span></h2></label></th>
+                    <td class="nextto">
+                        <div class="right with_example">
+                            <input class="textbox-name" type="text" name="lastname" value="{{ old('lastname') }}">
                             <p class="example">例）山田</p>
+                            @if ($errors->has('lastname'))
+                            <p class="ErrorMessage">{{ $errors->first('lastname') }}</p>
+                            @endif
                         </div>
-                        <div class="lastname with_example">
-                            <input class="textbox-name" type="text" name="firstname" value="{{ old('firstname') }}" method="POST">
+                        <div class="right with_example">
+                            <input class="textbox-name" type="text" name="firstname" value="{{ old('firstname') }}">
                             <p class="example">例）太郎</p>
+                            @if ($errors->has('firstname'))
+                            <p class="ErrorMessage">{{ $errors->first('firstname') }}</p>
+                            @endif
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <th><h2 class="item-title">性別<span>※</span></h2></th>
-                    <td>
+                    <th><h2>性別<span>※</span></h2></th>
+                    <td class="nextto">
                         <input class="radio" type="radio" name="gender" value="男性" checked="checked">男性
                         <input class="radio" type="radio" name="gender" value="女性">女性
                     </td>
                 </tr>
                 <tr>
-                    <th><h2 class="item-title">メールアドレス<span>※</span></h2></th>
+                    <th><h2>メールアドレス<span>※</span></h2></th>
                     <td>
                         <div class="right with_example">
                             <input type="text" name="email" value="{{ old('email') }}">
                             <p class="example">例）test@example.com</p>
+                            @if ($errors->has('email'))
+                            <p class="ErrorMessage">{{ $errors->first('email') }}</p>
+                            @endif
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <th><h2 class="item-title">郵便番号<span>※</span></h2></th>
-                    <td>
+                    <th><h2>郵便番号<span>※</span></h2></th>
+                    <td class="nextto right">
                         &#12306;
                         <div class="with_example">
                             <input type="text" name="postcode" value="{{ old('postcode') }}">
                             <p class="example">例）123-4567</p>
+                            @if ($errors->has('postcode'))
+                            <p class="ErrorMessage">{{ $errors->first('postcode') }}</p>
+                            @endif
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <th><h2 class="item-title">住所<span>※</span></h2></th>
+                    <th><h2>住所<span>※</span></h2></th>
                     <td>
                         <div class="right with_example">
                             <input type="text" name="address" value={{ old('address') }}>
                             <p class="example">例）東京都渋谷区千駄ヶ谷1-2-3</p>
+                            @if ($errors->has('address'))
+                            <p class="ErrorMessage">{{ $errors->first('address') }}</p>
+                            @endif
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <th><h2 class="item-title">建物名</h2></th>
+                    <th><h2>建物名</h2></th>
                     <td>
                         <div class="right with_example">
                             <input type="text" name="building_name" value="{{ old('building_name') }}">
@@ -82,10 +90,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <th><h2 class="item-title">ご意見<span>※</span></h2></th>
+                    <th><h2>ご意見<span>※</span></h2></th>
                     <td>
                         <div class="right">
                             <textarea name="opinion" id="" cols="30" rows="10">{{ old('opinion') }}</textarea>
+                            @if ($errors->has('opinion'))
+                            <p class="ErrorMessage">{{ $errors->first('opinion') }}</p>
+                            @endif
                         </div>
                     </td>
                 </tr>

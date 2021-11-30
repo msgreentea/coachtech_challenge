@@ -27,33 +27,20 @@ class InquiryController extends Controller
         $validated = $request->safe()->only(['fullname', 'postcode']);
 
         $data = $request->all();
-
-        // if (Contact::$ValidationRules->fails()) {
-        //     return redirect('/');
-        // }
-
-        // if ($validated->fails()) {
-        //     return redirect('/')->withErrors($validated)->withInput();
-        // }
-
         return view('confirmation', ['data' => $data]);
     }
 
     // inquiryで入力したデータをDBに保存
     public function send(Request $request)
     {
-        // DBに保存
         $data = $request->all();
         Contact::create($data);
         $data = $request->input();
     }
 
     // サンクスページに遷移
-    public function thanks(Request $request)
+    public function thanks()
     {
-
-        $data = Contact::all();
-        return view('confirmation', ['data' => $data]);
-        // return view('confirmation');
+        return view('thanks');
     }
 }

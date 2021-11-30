@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ContactFactory extends Factory
 {
-    // protected無かったから書き足した
     /**
      * The name of the factory's corresponding model.
      *
@@ -33,8 +32,6 @@ class ContactFactory extends Factory
             'address' => $this->faker->address,
             'building_name' => $this->faker->secondaryAddress,
             'opinion' => $this->faker->text,
-            // '' => $this->faker->date,
-            // '' => $this->faker->date,
         ];
     }
 }
