@@ -38,7 +38,6 @@ class ContactRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'fullname' => 'required',
             'fullname' => 'required',
             'gender' => 'required',
             'email' => 'required | email:rfc,dns',

@@ -3,15 +3,12 @@ h1 {
 }
 .container {
   padding: 0 15%;
-  /* background-color: blanchedalmond; */
 }
 .frame {
   margin: 0 auto;
   width: 100%;
-  /* background-color: snow; */
 }
 table {
-  /* background-color: white; */
   width: 100%;
 }
 .item {
